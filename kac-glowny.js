@@ -29,22 +29,74 @@ var osoba = {
     zdrowie: 50,    // główna statystyka, 0 - śmierć, 100 - wyjście z kaca
     zlosc: 70,      // 0 - wściekły
     zoladek: 20     // zawartosc brzucha, wzmaga glod
+    },
+    // Opisy poziomów kondycji; poziomy indeksu:
+    // 0:1-3; 1:4-10; 2:11-15; 3:16-20; 4:21-25; 5:26-30; 6:31-35; 7:36-40; 8:80-90; 9:91+
+    fraza = {
+    sila: [["Zaraz stracisz przytomność ze zmęczenia", "Zaraz stracisz przytomność ze zmęczenia"],
+           ["Wkrótce stracisz przytomność ze zmęczenia", "Wkrótce stracisz przytomność ze zmęczenia"],
+           ["Jesteś skrajnie wyczerpana", "Jesteś skrajnie wyczerpany"],
+           ["Jesteś wyczerpana", "Jesteś wyczerpany"],
+           ["Jesteś bardzo zmęczona", "Jesteś bardzo zmęczony"],
+           ["Jesteś dość zmęczona", "Jesteś dość zmęczony"],
+           ["Jesteś zmęczona", "Jesteś zmęczony"],
+           ["Jesteś nieco zmęczona", "Jesteś nieco zmęczony"],
+           ["Jesteś wypoczęta", "Jesteś wypoczęty"],
+           ["Jesteś bardzo wypoczęta", "Jesteś wypoczęty"]]
     };
 
+// Współzależności między zmiennymi
 var podliczZdrowie = function () {
 
+};
+
+// Maszyna, która obsługuje switche
+// 0:1-3; 1:4-10; 2:11-15; 3:16-20; 4:21-25; 5:26-30; 6:31-35; 7:36-40; 8:80-90; 9:91+
+var pobierzOpis = function (slowo) {
+
+    // KURWA PROBLEM
+    // on traktuje "zmienna" jako klucz w osoba, a nie podkłada
+    var zmienna = slowo;
+    if (osoba.zmienna > 0 && osoba.zmienna < 4) {
+        return fraza.zmienna[0][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 3 && osoba.zmienna < 11) {
+        return fraza.zmienna[1][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 10 && osoba.zmienna < 16) {
+        return fraza.zmienna[2][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 15 && osoba.zmienna < 21) {
+        return fraza.zmienna[3][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 20 && osoba.zmienna < 26) {
+        return fraza.zmienna[4][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 25 && osoba.zmienna < 31) {
+        return fraza.zmienna[5][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 30 && osoba.zmienna < 36) {
+        return fraza.zmienna[6][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 35 && osoba.zmienna < 41) {
+        return fraza.zmienna[7][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 80 && osoba.zmienna < 91) {
+        return fraza.zmienna[8][osoba.plec] + ". ";
+    } else if (osoba.zmienna > 90) {
+        return fraza.zmienna[9][osoba.plec] + ". ";
+    } else {
+        return 0;
+    }
+};
+
+// Epitety kondycji
+var opiszKondycje = function () {
 };
 
 // Pętla główna
 var petlaGlowna = function() {
     // podlicz decyzję
-    // podlicz zdrowie
-//  podliczZdrowie();
+    // podlicz kondycje
+//  podliczKondycje();
     // podlicz scenę i zegar
 
     // przedstaw wynik decyzji
     // przedstaw scenę, zegar
-    // przedstaw zdrowie
+    // przedstaw kondycje
+//  opiszKondycje();
     // przedstaw decyzje
 
     krok = krok + 1;
