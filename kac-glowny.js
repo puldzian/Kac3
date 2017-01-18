@@ -56,6 +56,7 @@ var pobierzOpis = function (slowo) {
 
     // KURWA PROBLEM
     // on traktuje "zmienna" jako klucz w osoba, a nie podkłada
+    // Trzeba to ogarnąć przez metody osoby albo frazy, a nie zewnętrzne funkcje!!!
     var zmienna = slowo;
     if (osoba.zmienna > 0 && osoba.zmienna < 4) {
         return fraza.zmienna[0][osoba.plec] + ". ";
