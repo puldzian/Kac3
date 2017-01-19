@@ -67,27 +67,26 @@ var pobierzOpis = function (slowo) {
     // KURWA PROBLEM
     // on traktuje "zmienna" jako klucz w osoba, a nie podkłada
     // Trzeba to ogarnąć przez metody osoby albo frazy, a nie zewnętrzne funkcje!!!
-    var zmienna = slowo;
-    if (osoba.zmienna > 0 && osoba.zmienna < 4) {
-        return fraza.zmienna[0][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 3 && osoba.zmienna < 11) {
-        return fraza.zmienna[1][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 10 && osoba.zmienna < 16) {
-        return fraza.zmienna[2][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 15 && osoba.zmienna < 21) {
-        return fraza.zmienna[3][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 20 && osoba.zmienna < 26) {
-        return fraza.zmienna[4][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 25 && osoba.zmienna < 31) {
-        return fraza.zmienna[5][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 30 && osoba.zmienna < 36) {
-        return fraza.zmienna[6][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 35 && osoba.zmienna < 41) {
-        return fraza.zmienna[7][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 80 && osoba.zmienna < 91) {
-        return fraza.zmienna[8][osoba.plec] + ". ";
-    } else if (osoba.zmienna > 90) {
-        return fraza.zmienna[9][osoba.plec] + ". ";
+    if (osoba[slowo] > 0 && osoba[slowo] < 4) {
+        return fraza[slowo][0][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 3 && osoba[slowo] < 11) {
+        return fraza[slowo][1][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 10 && osoba[slowo] < 16) {
+        return fraza[slowo][2][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 15 && osoba[slowo] < 21) {
+        return fraza[slowo][3][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 20 && osoba[slowo] < 26) {
+        return fraza[slowo][4][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 25 && osoba[slowo] < 31) {
+        return fraza[slowo][5][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 30 && osoba[slowo] < 36) {
+        return fraza[slowo][6][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 35 && osoba[slowo] < 41) {
+        return fraza[slowo][7][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 80 && osoba[slowo] < 91) {
+        return fraza[slowo][8][osoba.plec] + ". ";
+    } else if (osoba[slowo] > 90) {
+        return fraza[slowo][9][osoba.plec] + ". ";
     } else {
         return 0;
     }
