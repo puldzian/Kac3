@@ -7,6 +7,20 @@
 // Główne zmienne
 var krok = 1;
 
+//
+var fraza = {
+    sila: [["Zaraz stracisz przytomność ze zmęczenia", "Zaraz stracisz przytomność ze zmęczenia"],
+           ["Wkrótce stracisz przytomność ze zmęczenia", "Wkrótce stracisz przytomność ze zmęczenia"],
+           ["Jesteś skrajnie wyczerpana", "Jesteś skrajnie wyczerpany"],
+           ["Jesteś wyczerpana", "Jesteś wyczerpany"],
+           ["Jesteś bardzo zmęczona", "Jesteś bardzo zmęczony"],
+           ["Jesteś dość zmęczona", "Jesteś dość zmęczony"],
+           ["Jesteś zmęczona", "Jesteś zmęczony"],
+           ["Jesteś nieco zmęczona", "Jesteś nieco zmęczony"],
+           ["Jesteś wypoczęta", "Jesteś wypoczęty"],
+           ["Jesteś bardzo wypoczęta", "Jesteś wypoczęty"]]
+    };
+
 // Objekt gracza, czyli zbiór statystyk zdrowotnych
 var osoba = {
     bolbrzucha: 50, // 0 - pękają jelita
@@ -28,32 +42,28 @@ var osoba = {
     wymiot: 50,     // 0 - wymiotuje
     zdrowie: 50,    // główna statystyka, 0 - śmierć, 100 - wyjście z kaca
     zlosc: 70,      // 0 - wściekły
-    zoladek: 20     // zawartosc brzucha, wzmaga glod
-    },
+    zoladek: 20,     // zawartosc brzucha, wzmaga glod
+
+    opisz: function (co) {
+        var that = this,
+            rzecz = co;
+        if (osoba.rzecz > 0) {
+            return fraza.rzecz[1][osoba.plec];
+        }
+    }
+    };
     // Opisy poziomów kondycji; poziomy indeksu:
     // 0:1-3; 1:4-10; 2:11-15; 3:16-20; 4:21-25; 5:26-30; 6:31-35; 7:36-40; 8:80-90; 9:91+
-    fraza = {
-    sila: [["Zaraz stracisz przytomność ze zmęczenia", "Zaraz stracisz przytomność ze zmęczenia"],
-           ["Wkrótce stracisz przytomność ze zmęczenia", "Wkrótce stracisz przytomność ze zmęczenia"],
-           ["Jesteś skrajnie wyczerpana", "Jesteś skrajnie wyczerpany"],
-           ["Jesteś wyczerpana", "Jesteś wyczerpany"],
-           ["Jesteś bardzo zmęczona", "Jesteś bardzo zmęczony"],
-           ["Jesteś dość zmęczona", "Jesteś dość zmęczony"],
-           ["Jesteś zmęczona", "Jesteś zmęczony"],
-           ["Jesteś nieco zmęczona", "Jesteś nieco zmęczony"],
-           ["Jesteś wypoczęta", "Jesteś wypoczęty"],
-           ["Jesteś bardzo wypoczęta", "Jesteś wypoczęty"]]
-    };
+
 
 // Współzależności między zmiennymi
-var podliczZdrowie = function () {
+var podliczKondycje = function () {
 
 };
 
 // Maszyna, która obsługuje switche
 // 0:1-3; 1:4-10; 2:11-15; 3:16-20; 4:21-25; 5:26-30; 6:31-35; 7:36-40; 8:80-90; 9:91+
 var pobierzOpis = function (slowo) {
-
     // KURWA PROBLEM
     // on traktuje "zmienna" jako klucz w osoba, a nie podkłada
     // Trzeba to ogarnąć przez metody osoby albo frazy, a nie zewnętrzne funkcje!!!
@@ -83,6 +93,29 @@ var pobierzOpis = function (slowo) {
     }
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Epitety kondycji
 var opiszKondycje = function () {
 };
@@ -93,9 +126,11 @@ var petlaGlowna = function() {
     // podlicz kondycje
 //  podliczKondycje();
     // podlicz scenę i zegar
-
+    // wylosuj sytuacje losowe
+//  PRZERYWNIK
     // przedstaw wynik decyzji
     // przedstaw scenę, zegar
+    // wydarzenie losowe, sytuacja?
     // przedstaw kondycje
 //  opiszKondycje();
     // przedstaw decyzje
