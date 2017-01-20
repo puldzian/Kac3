@@ -61,6 +61,12 @@ var podliczKondycje = function () {
 
 };
 
+// Test maszyny do pobierania...
+var pobierzTest = function (slowo) {
+    var zmienna = slowo.toString;
+    return zmienna;
+};
+
 // Maszyna, która obsługuje switche
 // 0:1-3; 1:4-10; 2:11-15; 3:16-20; 4:21-25; 5:26-30; 6:31-35; 7:36-40; 8:80-90; 9:91+
 var pobierzOpis = function (slowo) {
