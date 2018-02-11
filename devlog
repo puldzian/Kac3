@@ -1,0 +1,18 @@
+18.02.10 *
+Osoby jako nośniki zmiennych o swojej kondycji. 
+Kondycje zazębiają się ze sobą. 
+Na bazie kondycji aktorzy podejmują decyzje o działaniach:
+zaradzają boleściom.
+Jak działać ma AI? Na bazie kondycji aktorzy określają cel: 
+dopóki nie zostanie zrealizowany dążą do niego
+jeśli zostanie zrealizowany przechodzą w tryb IDLE
+opierdalają się i czekają, aż któraś zmienna znów będzie niska
+Od czego zacząć? Od silnika zdrowia > testowanie zmiennych wraz z upływem
+czasu > podawanie remediów > które również wpływają na inne zmienne.
+
+No więc teraz trzeba zrobić mechanizm wiązania zmiennych. 
+
+18.02.11 *
+Zamiast badać ręcznie system, trzeba zrobić for przez własności obiektu 
+i wyrzucić do konsoli.
+Od razu lepiej.
